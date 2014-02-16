@@ -1,0 +1,12 @@
+{
+  "hyone_tmux": {
+    "user": "vagrant",
+    "libevent_version": "2.0.21-stable",
+    "version": "1.8"
+  },
+
+  "run_list": [
+    "recipe[hyone_tmux::default]",
+    "recipe[hyone_tmux::from_source]"
+  ]
+}
