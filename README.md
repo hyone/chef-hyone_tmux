@@ -20,17 +20,17 @@
 
 ## Recipes
 
-## hyone_tmux::package
+### hyone_tmux::package
 
 Install tmux from os package system
 ( Currently don't use attributes below )
 
-## hyone_tmux::source
+### hyone_tmux::source
 
 Build and install tmux from source distribution.
 customizable by attributes like below.
 
-# Attributes
+## Attributes
 
 - `node.hyone_tmux.user`: owner of installed tmux distribution
 
@@ -52,6 +52,6 @@ customizable by attributes like below.
 
 - `node.hyone_tmux.libevent_version`: installed libevent version
 
-# Author
+## Author
 
 Author:: hyone (<hyone.development@gmail.com>)
