@@ -11,14 +11,16 @@ when platform?('ubuntu')
 end
 
 ## user and group
+# NOTE: execute these resoruces earlier than any other resources
+#       (in resource compilation time)
 user _user do
   home _home
   supports manage_home: true
   shell '/bin/bash'
-  action [:create]
-end
+  action [:nothing]
+end.run_action(:create)
 
 group _group do
   members [_user]
-  action [:create]
-end
+  action [:nothing]
+end.run_action(:create)
