@@ -28,4 +28,4 @@ suites:
         user: hoge
         group: hoge
         libevent_version: "2.0.21-stable"
-        version: "1.8"
+        version: "1.9"

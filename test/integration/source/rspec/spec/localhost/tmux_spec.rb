@@ -1,6 +1,7 @@
 require 'spec_helper'
 
-_tmux = '/home/hoge/local/apps/tmux-1.8/bin/tmux'
+_version = '1.9'
+_tmux = "/home/hoge/local/apps/tmux-#{_version}/bin/tmux"
 
 describe file(_tmux) do
   it { should be_file }

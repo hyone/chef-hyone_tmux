@@ -7,4 +7,4 @@
 # All rights reserved - Do Not Redistribute
 #
 
-include_recipe 'hyone_tmux::default'
+include_recipe 'hyone_tmux::package'
