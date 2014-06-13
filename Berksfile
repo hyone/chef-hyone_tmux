@@ -1,6 +1,6 @@
-site :opscode
-metadata
+source 'https://api.berkshelf.com'
 
+metadata
 cookbook 'hyone_source_package', github: 'hyone/chef-hyone_source_package'
 
 group :integration do
