@@ -5,6 +5,21 @@ _group = get_user(node)
 _home  = _user == 'root' ? '/root' : "/home/#{_user}"
 
 
+# Generate locales to avoid warnings like:
+# 'bash: warning: setlocale: LC_ALL: cannot change locale (ja_JP.UTF-8)'
+case
+when platform?('centos')
+  execute 'generate locale' do
+    command 'localedef -f UTF-8 -i ja_JP /usr/lib/locale/ja_JP.UTF-8'
+    action [:run]
+  end
+when platform?('ubuntu')
+  execute 'locale-gen' do
+    command 'locale-gen ja_JP.UTF-8'
+    action [:run]
+  end
+end
+
 case
 when platform?('ubuntu')
   include_recipe 'apt'
