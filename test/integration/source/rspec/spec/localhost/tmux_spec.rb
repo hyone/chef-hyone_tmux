@@ -1,7 +1,9 @@
 require 'spec_helper'
 
 _version = '1.9'
-_tmux = "/home/hoge/local/apps/tmux-#{_version}/bin/tmux"
+_user    = 'hoge'
+_tmux    = "/home/#{_user}/local/apps/tmux-#{_version}/bin/tmux"
+
 
 describe file(_tmux) do
   it { should be_file }
@@ -9,10 +11,10 @@ describe file(_tmux) do
 end
 
 command ("#{_tmux} -V") do
-  it { should return_stdout /tmux/ }
+  its(:stdout) { should match /tmux/ }
 end
 
-describe file('/home/hoge/local/bin/tmux') do
+describe file("/home/#{_user}/local/bin/tmux") do
   it { should be_file }
   it { should be_linked_to _tmux }
 end
